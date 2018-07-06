@@ -1,0 +1,106 @@
+<div class="text-center landing-head">
+    <div class="row m-auto">
+        <div class="card box-shadow calendar">
+          <div class="card-body p-0"  *ngIf="calendar">
+            <div class="row">
+              <div class="col-7 text-left p-3">
+                <p class="h3">{{ calendar.date.slice(0,4) }}</p>
+                <p class="h4">{{ calendar.date.slice(5,7)}}月
+                </p>
+              </div>
+              <div class="col-5 text-center">
+                <p class="display-2">{{ calendar.date.slice(8,10) }}</p>
+              </div>
+            </div>
+            <hr/>
+            <div class="row">
+              <div class="col-3"><p class="icontext bg-secondary text-white">农历</p></div>
+              <div class="col-9"><p class="text-left">{{ calendar.nongli }}</p></div>
+            </div>
+            <div class="row">
+              <div class="col-3"><p class="icontext bg-primary text-white">宜</p></div>
+              <div class="col-9"><p class="text-left">{{ calendar.yi }}</p></div>
+            </div>
+            <div class="row">
+              <div class="col-3"><p class="icontext bg-danger text-white">忌</p></div>
+              <div class="col-9"><p class="text-left">{{ calendar.ji }}</p></div>
+            </div>
+            <hr/>
+            <button class="btn btn-info"><i class="fa fa-align-left"></i> 更多详细</button>
+          </div>
+          <div class="" *ngIf="!calendar">
+            Loading
+          </div>
+        </div>
+        <div class="landing-motto text-white font-weight-bold" >
+          <p class="text-right h3 text-kaiti">风水真的是迷信吗？如果能用科学的方法去印证风水，你相信吗？
+              紫水晶风水咨询，就是用最科学的角度解析风水与命理。
+          </p>
+          <h4 class="text-right text-kaiti">
+            ——殷绵
+          </h4>
+          <hr class="my-4" />
+          <button class="btn btn-info btn-lg float-right"><i class="fa fa-question-circle"></i> 何为风水</button>
+        </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row my-3">
+    <div class="col-md-4">
+      <div class="card box-shadow">
+        <div class="card-header">
+          <p class="font-weight-light m-0">风水咨询</p>
+        </div>
+        <i class="fa fa-exclamation-circle fa-5x text-center m-5" style="color:cadetblue"></i>
+        <div class="card-body">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam maiores harum animi perspiciatis iusto, explicabo eveniet tempore
+          consectetur ea aliquam rem quam, facere, saepe eum esse dolorem pariatur placeat a? </div>
+      <button class="btn btn-info">了解更多</button>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card box-shadow mw-75">
+        <div class="card-header">
+          <p class="font-weight-light m-0">八字测算</p>
+        </div>
+        <i class="fa fa-home fa-5x text-center m-5" style="color:cadetblue"></i>
+        <div class="card-body">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam maiores harum animi perspiciatis iusto, explicabo eveniet tempore
+          consectetur ea aliquam rem quam, facere, saepe eum esse dolorem pariatur placeat a? </div>
+          <button class="btn btn-info">了解更多</button>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card box-shadow mw-75">
+        <div class="card-header">
+          <p class="font-weight-light m-0">收费项目</p>
+        </div>
+        <i class="fa fa-home fa-5x text-center m-5" style="color:cadetblue"></i>
+        <div class="card-body">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam maiores harum animi perspiciatis iusto, explicabo eveniet tempore
+          consectetur ea aliquam rem quam, facere, saepe eum esse dolorem pariatur placeat a? </div>
+          <button class="btn btn-info">了解更多</button>
+      </div>
+    </div>
+
+    <div class="card m-3" *ngFor="let post of posts">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-9 p-5">
+            <h2>{{post.title}}</h2>
+            <hr/>
+            <p class="text-secondary">{{post.summary}}</p>
+            <button class="btn btn-info" routerLink="/post/{{post.id}}" >阅读全文</button>
+          </div>
+          <div class="col-md-3">
+            <img class="img-fluid img-thumbnail rounded float-right" src="{{post.caption}}" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+  </div>

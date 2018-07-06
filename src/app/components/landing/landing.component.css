@@ -1,0 +1,55 @@
+.landing-head {
+  background:  linear-gradient(
+      rgba(77, 77, 77, 0.3), 
+      rgba(77, 77, 77,0.3)
+    ), url('../../../assets/images/landingimage.jpg') no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height:70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.landing-motto{
+    max-width: 700px;
+    padding: 3rem;
+    margin: auto;
+}
+.calendar{
+  width:350px;
+  height:520px;
+  background: #ededed;
+  border-radius: 1rem;
+  padding:2rem;
+  margin:0.5rem auto;
+}
+
+
+
+.yiji-1{
+    height:10rem;
+    background: linear-gradient(
+        -45deg,
+      rgb(238, 17, 17), 
+      rgb(255, 183, 183)
+    );
+}
+.yiji-2{
+  height:10rem;
+  background: linear-gradient(
+      -45deg,
+    rgb(104, 73, 73), 
+    rgb(235, 218, 218)
+  );
+}
+.icontext{
+  border-radius: .2rem;
+  margin: 0 , 0;
+  font-family: STKaiti, "华文楷体","KaiTi", "楷体",Georgia, "Times New Roman",   serif;
+  font-weight:600;
+
+}
+
+.text-kaiti{
+  font-family: STKaiti, "华文楷体","KaiTi", "楷体",Georgia, "Times New Roman",   serif;
+}
