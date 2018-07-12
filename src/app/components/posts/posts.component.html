@@ -1,0 +1,19 @@
+
+  <div class="container bg-light p3">
+      <div class="card my-3" *ngFor="let post of posts">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-9 p-5">
+                <h2>{{post.title}}</h2>
+                <hr/>
+                <p class="text-secondary">{{post.summary}}</p>
+                <button class="btn btn-info" routerLink="/post/{{post.id}}" >阅读全文</button>
+              </div>
+              <div class="col-md-3">
+                <img *ngIf="post.caption" class="img-fluid img-thumbnail rounded float-right" src="{{post.caption}}" alt="">
+                <img *ngIf="!post.caption" class="img-fluid img-thumbnail rounded float-right" src="../../../assets/images/logo.png" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+  </div>

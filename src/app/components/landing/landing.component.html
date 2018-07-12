@@ -1,3 +1,22 @@
+<div class="modal fade" id="weixin" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">紫水晶风水咨询</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          微信号：Amythyst891
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 <div class="text-center landing-head">
     <div class="row m-auto">
         <div class="card box-shadow calendar">
@@ -26,7 +45,7 @@
               <div class="col-9"><p class="text-left">{{ calendar.ji }}</p></div>
             </div>
             <hr/>
-            <button class="btn btn-info"><i class="fa fa-align-left"></i> 更多详细</button>
+            <a class="btn btn-info text-light" href="/today" ><i class="fa fa-align-left"></i> 更多详细</a>
           </div>
           <div class="" *ngIf="!calendar">
             Loading
@@ -40,50 +59,66 @@
             ——殷绵
           </h4>
           <hr class="my-4" />
-          <button class="btn btn-info btn-lg float-right"><i class="fa fa-question-circle"></i> 何为风水</button>
+          <a class="btn btn-info btn-lg float-right" href="/introduction"><i class="fa fa-question-circle"></i> 何为风水</a>
         </div>
   </div>
 </div>
+
+<div class="contact text-center p-3">
+    <a data-toggle="modal" data-target="#weixin"><i class="fa fa-weixin fa-3x text-center mx-5 text-info"></i></a >
+    <a href="mailto:amethystfs891@gmail.com"><i class="fa fa-envelope fa-3x text-center mx-5 text-info "></i></a>
+    <a href="https://www.facebook.com/Amethystfs891"><i class="fa fa-facebook fa-3x text-center  mx-5 text-info"></i></a>
+</div>
+
 <div class="container">
-  <div class="row my-3">
-    <div class="col-md-4">
+  <div class="row my-5">
+    <div class="col-md-3">
       <div class="card box-shadow">
         <div class="card-header">
-          <p class="font-weight-light m-0">风水咨询</p>
+          <h3 class="text-center text-info m-0">八字咨询</h3>
         </div>
         <i class="fa fa-exclamation-circle fa-5x text-center m-5" style="color:cadetblue"></i>
-        <div class="card-body">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam maiores harum animi perspiciatis iusto, explicabo eveniet tempore
-          consectetur ea aliquam rem quam, facere, saepe eum esse dolorem pariatur placeat a? </div>
-      <button class="btn btn-info">了解更多</button>
+        <div class="card-body display-4 text-center text-info my-3">
+          $90 <span class="h5 font-weight-bold">起</span> </div>
+      <button class="btn btn-info" href="/consulting#baziquanxiang" >了解更多</button>
       </div>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-3">
       <div class="card box-shadow mw-75">
         <div class="card-header">
-          <p class="font-weight-light m-0">八字测算</p>
+          <h3 class="text-center text-info m-0">风水咨询</h3>
         </div>
         <i class="fa fa-home fa-5x text-center m-5" style="color:cadetblue"></i>
-        <div class="card-body">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam maiores harum animi perspiciatis iusto, explicabo eveniet tempore
-          consectetur ea aliquam rem quam, facere, saepe eum esse dolorem pariatur placeat a? </div>
-          <button class="btn btn-info">了解更多</button>
+        <div class="card-body display-4 text-center text-info my-3">
+          $368 <span class="h5 font-weight-bold">起</span> </div>
+          <a class="btn btn-info" href="/consulting#zhuzhaifengshui" >了解更多</a>
       </div>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-3">
       <div class="card box-shadow mw-75">
         <div class="card-header">
-          <p class="font-weight-light m-0">收费项目</p>
+          <h3 class="text-center text-info m-0">择日咨询</h3>
         </div>
-        <i class="fa fa-home fa-5x text-center m-5" style="color:cadetblue"></i>
-        <div class="card-body">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam maiores harum animi perspiciatis iusto, explicabo eveniet tempore
-          consectetur ea aliquam rem quam, facere, saepe eum esse dolorem pariatur placeat a? </div>
-          <button class="btn btn-info">了解更多</button>
+        <i class="fa fa-calendar fa-5x text-center m-5" style="color:cadetblue"></i>
+        <div class="card-body display-4 text-center text-info my-3">
+          $100 <span class="h5 font-weight-bold">起</span> </div>
+          <a class="btn btn-info" href="/consulting#putongzeri" >了解更多</a>
       </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card box-shadow mw-75">
+        <div class="card-header">
+          <h3 class="text-center text-info m-0">更多咨询</h3>
+        </div>
+        <i class="fa fa-info fa-5x text-center m-5" style="color:cadetblue"></i>
+        <div class="card-body display-4 text-center text-info my-3">
+          $80 <span class="h5 font-weight-bold">起</span> </div>
+          <a class="btn btn-info" href="/consulting" >了解更多</a>
+      </div>
+    </div>
     </div>
 
-    <div class="card m-3" *ngFor="let post of posts">
+    <div class="card my-3" *ngFor="let post of posts">
       <div class="card-body">
         <div class="row">
           <div class="col-md-9 p-5">
@@ -93,7 +128,8 @@
             <button class="btn btn-info" routerLink="/post/{{post.id}}" >阅读全文</button>
           </div>
           <div class="col-md-3">
-            <img class="img-fluid img-thumbnail rounded float-right" src="{{post.caption}}" alt="">
+            <img *ngIf="post.caption" class="img-fluid img-thumbnail rounded float-right" src="{{post.caption}}" alt="">
+            <img *ngIf="!post.caption" class="img-fluid img-thumbnail rounded float-right" src="../../../assets/images/logo.png" alt="">
           </div>
         </div>
       </div>

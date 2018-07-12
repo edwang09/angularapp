@@ -31,5 +31,29 @@ export class PostsService {
     )
     return this.posts;
   }
+  getPost(id: string): Observable<Post> {
+    this.postDoc = this.afs.doc<Post>(`posts/${id}`);
+    this.post = this.postDoc.snapshotChanges().pipe(
+      map(action => {
+      if(action.payload.exists === false) {
+        return null;
+      } else {
+        const data = action.payload.data() as Post;
+        data.id = action.payload.id;
+        return data;
+      }
+    })
+  )
+
+    return this.post;
+  }
+  newPost(post: Post) {
+    this.postsCollection.add(post);
+  }
+  
+  deletePost(post: Post) {
+    this.postDoc = this.afs.doc(`posts/${post.id}`);
+    this.postDoc.delete();
+  }
 
 }

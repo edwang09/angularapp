@@ -53,3 +53,12 @@
 .text-kaiti{
   font-family: STKaiti, "华文楷体","KaiTi", "楷体",Georgia, "Times New Roman",   serif;
 }
+.contact{
+  padding:1rem 1rem;
+  height: 5rem;
+  width:100%;
+  background-color: lightcyan;
+}
+.fa:hover{
+  text-shadow: 0 0 4px rgb(110, 106, 106);
+}

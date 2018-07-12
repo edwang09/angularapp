@@ -1,0 +1,10 @@
+.anchor-bar{
+    position:fixed;
+    top: 5rem;
+    width: 15rem;
+    border: 0.5rem solid #ededed;
+    border-radius: 0.5rem;
+    right: 20%;
+    background-color: #fff;
+    color: #999999;
+}

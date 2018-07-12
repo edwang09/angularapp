@@ -1,0 +1,11 @@
+<div class="container">
+  <p class="display-4">
+    {{post.title}}
+  </p>
+  <p>{{post.author}}</p>
+  <small>{{post.createDate | date}}</small>
+  
+  <hr/>
+    <div class="my-5" [froalaView]="post.content"></div>
+  <hr/>
+</div>

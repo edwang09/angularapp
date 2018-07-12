@@ -1,8 +1,10 @@
 export interface Post {
-    id?: string;
+    id?:string;
+    caption?:string;
     title?: string;
-    content?: any[];
-    createDate?: any;
-    auther?: string;
+    summary?:string;
+    content?: string;
+    createDate?: number;
+    author?: string;
     likes?: number;
   }

@@ -29,4 +29,9 @@ export class LunerapiService {
     }
     return this.http.post<calendarApiResponse>(this.LunerDataUrl, data, httpOptions)
   }
+  
+  getFormatedDate():string{
+    const rawdate = new Date()
+    return rawdate.getFullYear() + "-" + ("0"+(rawdate.getMonth()+1)).slice(-2) + "-"+ ("0" + rawdate.getDate()).slice(-2)
+  }
 }

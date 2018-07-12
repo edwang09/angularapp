@@ -3,10 +3,12 @@ import { FormsModule } from '@angular/Forms';
 import { NgModule } from '@angular/core';
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import { HttpClientModule } from '@angular/common/http';
+import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
 
 import {environment} from '../environments/environment';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireStorageModule } from 'angularfire2/storage';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { AppComponent } from './app.component';
@@ -24,7 +26,13 @@ import { AddClientComponent } from './components/add-client/add-client.component
 import { FooterComponent } from './components/footer/footer.component';
 import { LandingComponent } from './components/landing/landing.component';
 import { PostsService } from './services/posts.service';
-import { AddPostComponent } from './components/add-post/add-post.component'
+import { AddPostComponent } from './components/add-post/add-post.component';
+import { PostDetailComponent } from './components/post-detail/post-detail.component';
+import { ConsultingComponent } from './components/consulting/consulting.component';
+import { IntroductionComponent } from './components/introduction/introduction.component';
+import { TodayComponent } from './components/today/today.component';
+import { PostsComponent } from './components/posts/posts.component';
+import { ContactComponent } from './components/contact/contact.component'
 
 @NgModule({
   declarations: [
@@ -41,7 +49,13 @@ import { AddPostComponent } from './components/add-post/add-post.component'
     AddClientComponent,
     FooterComponent,
     LandingComponent,
-    AddPostComponent
+    AddPostComponent,
+    PostDetailComponent,
+    ConsultingComponent,
+    IntroductionComponent,
+    TodayComponent,
+    PostsComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +66,10 @@ import { AddPostComponent } from './components/add-post/add-post.component'
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    AngularFireStorageModule,
+    FroalaEditorModule.forRoot(), 
+    FroalaViewModule.forRoot()
   ],
   providers: [PostsService],
   bootstrap: [AppComponent]
