@@ -59,6 +59,7 @@
   width:100%;
   background-color: lightcyan;
 }
-.fa:hover{
-  text-shadow: 0 0 4px rgb(110, 106, 106);
+.fa-contact:hover{
+  text-shadow: 0 0 6px rgb(192, 169, 169);
+  cursor: pointer;
 }
