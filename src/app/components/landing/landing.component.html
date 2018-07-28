@@ -15,12 +15,12 @@
         </div>
       </div>
     </div>
-  </div>
-
-<div class="text-center landing-head">
-    <div class="row m-auto">
-        <div class="card box-shadow calendar">
-          <div class="card-body p-0"  *ngIf="calendar">
+</div>
+<main>
+<section class="text-center text-dark landing-head">
+  <div class="container">
+        <div class="calendar">
+          <div *ngIf="calendar">
             <div class="row">
               <div class="col-7 text-left p-3">
                 <p class="h3">{{ calendar.date.slice(0,4) }}</p>
@@ -45,98 +45,104 @@
               <div class="col-9"><p class="text-left">{{ calendar.ji }}</p></div>
             </div>
             <hr/>
-            <a class="btn btn-info text-light" href="/today" ><i class="fa fa-align-left"></i> 更多详细</a>
+            <a class="btn btn-white text-dark border border-secondary" href="/today" ><i class="fa fa-align-left"></i> 更多详细</a>
           </div>
           <div class="" *ngIf="!calendar">
             Loading
           </div>
-        </div>
-        <div class="landing-motto text-white font-weight-bold" >
-          <p class="text-right h3 text-kaiti">风水真的是迷信吗？如果能用科学的方法去印证风水，你相信吗？
-              紫水晶风水咨询，就是用最科学的角度解析风水与命理。
-          </p>
-          <h4 class="text-right text-kaiti">
-            ——殷绵
-          </h4>
-          <hr class="my-4" />
-          <a class="btn btn-info btn-lg float-right" href="/introduction"><i class="fa fa-question-circle"></i> 何为风水</a>
-        </div>
+      </div>
   </div>
-</div>
+</section>
+<section class="landing-motto">
+    <div class="container text-light text-kaiti text-right">
+            <h3 >风水真的是迷信吗？如果能用科学的方法去印证风水，你相信吗？
+                紫水晶风水咨询，就是用最科学的角度解析风水与命理。
+            </h3>
+            <h4 class="font-weight-light">
+              ——殷绵
+            </h4>
+            <hr class="m-4" />
+            <a class="btn btn-white btn-lg text-right text-light border border-light" href="/introduction"><i class="fa fa-question-circle"></i> 何为风水</a>
+    </div>
+</section>
 
-<div class="contact text-center p-3">
+<!--div class="contact text-center p-3">
     <a data-toggle="modal" data-target="#weixin"><i class="fa-contact fa fa-weixin fa-3x text-center mx-4 text-info"></i></a >
     <a href="mailto:amethystfs891@gmail.com"><i class="fa-contact fa fa-envelope fa-3x text-center mx-4 text-info "></i></a>
     <a href="https://www.facebook.com/Amethystfs891"><i class="fa-contact fa fa-facebook fa-3x text-center  mx-4 text-info"></i></a>
-</div>
-
-<div class="container">
-  <div class="row my-5">
-    <div class="col-lg-3 col-sm-6 my-5 px-3">
-      <div class="card box-shadow">
-        <div class="card-header">
-          <h3 class="text-center text-info m-0">八字咨询</h3>
-        </div>
-        <i class="fa fa-exclamation-circle fa-5x text-center m-5" style="color:cadetblue"></i>
-        <div class="card-body display-4 text-center text-info my-3">
-          $90 <span class="h5 font-weight-bold">起</span> </div>
-      <button class="btn btn-info" href="/consulting#baziquanxiang" >了解更多</button>
+</div-->
+<section class="landing-intro">
+  <div class="container">
+    <div class="row align-items-end">
+      <div class="col-md-6">
+          <div id="accordion">
+              <div class="card">
+                <div class="card-header" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  <h5 class="mb-0 text-light">
+                      Collapsible Group Item #1
+                  </h5>
+                </div>
+            
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                  <div class="card-body">
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                  <div class="card-header " id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                    <h5 class="mb-0 text-light" >
+                        Collapsible Group Item #1
+                    </h5>
+                  </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                  <div class="card-body">
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header " id="headingThree" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                    <h5 class="mb-0 text-light" >
+                        Collapsible Group Item #1
+                    </h5>
+                  </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                  <div class="card-body">
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                  </div>
+                </div>
+              </div>
+            </div>
+      </div>
+      <div class="col-md-6">
+        <img src="../../../assets/images/introimage.jpg" alt="">
       </div>
     </div>
-    <div class="col-lg-3 col-sm-6 my-5">
-      <div class="card box-shadow mw-75">
-        <div class="card-header">
-          <h3 class="text-center text-info m-0">风水咨询</h3>
-        </div>
-        <i class="fa fa-home fa-5x text-center m-5" style="color:cadetblue"></i>
-        <div class="card-body display-4 text-center text-info my-3">
-          $368 <span class="h5 font-weight-bold">起</span> </div>
-          <a class="btn btn-info" href="/consulting#zhuzhaifengshui" >了解更多</a>
-      </div>
-    </div>
-    <div class="col-lg-3 col-sm-6 my-5">
-      <div class="card box-shadow mw-75">
-        <div class="card-header">
-          <h3 class="text-center text-info m-0">择日咨询</h3>
-        </div>
-        <i class="fa fa-calendar fa-5x text-center m-5" style="color:cadetblue"></i>
-        <div class="card-body display-4 text-center text-info my-3">
-          $100 <span class="h5 font-weight-bold">起</span> </div>
-          <a class="btn btn-info" href="/consulting#putongzeri" >了解更多</a>
-      </div>
-    </div>
-    <div class="col-lg-3 col-sm-6 my-5">
-      <div class="card box-shadow mw-75">
-        <div class="card-header">
-          <h3 class="text-center text-info m-0">更多咨询</h3>
-        </div>
-        <i class="fa fa-info fa-5x text-center m-5" style="color:cadetblue"></i>
-        <div class="card-body display-4 text-center text-info my-3">
-          $80 <span class="h5 font-weight-bold">起</span> </div>
-          <a class="btn btn-info" href="/consulting" >了解更多</a>
-      </div>
-    </div>
-    </div>
-
-    <div class="card my-3" *ngFor="let post of posts">
-      <div class="card-body">
-        <div class="row">
-          <div class="col-md-9 p-5">
-            <h2>{{post.title}}</h2>
-            <hr/>
-            <p class="text-secondary">{{post.summary}}</p>
-            <button class="btn btn-info" routerLink="/post/{{post.id}}" >阅读全文</button>
-          </div>
-          <div class="col-md-3">
-            <img *ngIf="post.caption" class="img-fluid img-thumbnail rounded float-right" src="{{post.caption}}" alt="">
-            <img *ngIf="!post.caption" class="img-fluid img-thumbnail rounded float-right" src="../../../assets/images/logo.png" alt="">
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-
-
-
   </div>
+</section>
+
+<!--section class="landing-posts">
+<div class="container">
+  <div class="card my-3" *ngFor="let post of posts">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-9 p-5">
+          <h2>{{post.title}}</h2>
+          <hr/>
+          <p class="text-secondary">{{post.summary}}</p>
+          <button class="btn btn-info" routerLink="/post/{{post.id}}" >阅读全文</button>
+        </div>
+        <div class="col-md-3">
+          <img *ngIf="post.caption" class="img-fluid img-thumbnail rounded float-right" src="{{post.caption}}" alt="">
+          <img *ngIf="!post.caption" class="img-fluid img-thumbnail rounded float-right" src="../../../assets/images/logo.png" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section-->
+  
+
+
+</main>

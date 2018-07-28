@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'node_modules/bootstrap/scss/_functions';
+@import 'customVariables';
+@import 'node_modules/bootstrap/scss/bootstrap';
+
+* {
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    font-family: $font-family-chinese;
+}
+.text-kaiti{
+    font-family: $font-family-kaiti !important;
+}

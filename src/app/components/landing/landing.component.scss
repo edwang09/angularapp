@@ -1,0 +1,44 @@
+@import 'node_modules/bootstrap/scss/_functions';
+@import '../../../scss/customVariables';
+
+.landing-head {
+  background:  linear-gradient(
+      rgba($light , 0.2), 
+      rgba($light, 0.2)
+    ), url('../../../assets/images/landingimage.jpg') no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height:70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .calendar{
+    float:left;
+    width:350px;
+    min-height:520px;
+    border-radius: 1rem;
+    border: $secondary 1.5px solid;
+    padding:2rem;
+    margin: 2rem 2rem;
+  }
+}
+.landing-motto{
+  color: $primary;
+  padding:5rem 0;
+  background-color: $primary;
+}
+
+.landing-intro{
+  background: white;
+  padding:2rem;
+  img{
+    width:100%;
+  }
+  .card-header{
+    background-color: $primary;
+    &:hover {
+      background-color: $secondary;
+    }
+  }
+}
+
