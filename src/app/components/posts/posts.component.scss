@@ -1,0 +1,9 @@
+@import 'node_modules/bootstrap/scss/_functions';
+@import '../../../scss/customVariables';
+.btn{
+transition: all 0.1s;
+&:hover{
+    transform: scale(1.1);
+    background-color:$primary;
+}
+}

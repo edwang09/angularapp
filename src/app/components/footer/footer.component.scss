@@ -2,17 +2,34 @@
 @import '../../../scss/customVariables';
 .footer {
     width: 100%;
-    line-height: 60px;
     margin:0;
     padding:0;
     background: linear-gradient(90deg,
       rgba(#fff ,0.8) 30%, 
       rgba(#b308b3,0.8) 80%
-      
     );
     .logo{
         img{
             width:100%;
         }
+    }
+    .qrcode{
+        img{
+            width:100%;
+        }
+    }
+    .contact{
+        a{
+            color:white;
+            text-decoration: none;
+            &:hover{
+                color:white;
+            }
+        }
+    }
+}
+@media (max-width: 480px){
+    .footer{
+      background: #b308b3;
     }
 }

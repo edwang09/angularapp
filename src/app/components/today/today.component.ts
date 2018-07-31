@@ -8,7 +8,7 @@ import { Post } from '../../models/post'
 @Component({
   selector: 'app-today',
   templateUrl: './today.component.html',
-  styleUrls: ['./today.component.css']
+  styleUrls: ['./today.component.scss']
 })
 export class TodayComponent implements OnInit {
   today:Data = {date:""}
