@@ -11,7 +11,12 @@ import { Post } from '../../models/post'
   styleUrls: ['./today.component.scss']
 })
 export class TodayComponent implements OnInit {
-  today:Data = {date:""}
+  calendar:Data
+  DateToday:{
+    year: String,
+    month: String,
+    date: String
+  }
   constructor(
     private http: HttpClient,
     private LunerapiService:LunerapiService
@@ -19,10 +24,15 @@ export class TodayComponent implements OnInit {
 
   ngOnInit() {
     
+    const rawdate = new Date();
+    this.DateToday={
+      year:rawdate.getFullYear().toString(),
+      month:(rawdate.getMonth()+1).toString() ,
+      date:rawdate.getDate().toString()
+    }
     this.LunerapiService.getLunerInfo(this.LunerapiService.getFormatedDate()).subscribe((res) => {
-      if (res.msg==="请求成功") {
-        console.log(res.data)
-        this.today=res.data
+      if (res.data) {
+        this.calendar=res.data
     }});
   }
 

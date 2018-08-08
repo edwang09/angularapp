@@ -1,7 +1,7 @@
 <div class="container bg-light p-5 my-5 info">
     <div class="row">
         <div class="col-9 text-left">
-          <p class="display-3">{{ today?.date?.slice(0,4) }}年 {{ today?.date?.slice(5,7)}}月 {{ today?.date?.slice(8,10) }}日</p>
+          <p class="display-3">{{ DateToday.year }}年 {{ DateToday.month }}月 {{ DateToday.date }}日</p>
         </div>
       </div>
       <hr/>
@@ -9,22 +9,12 @@
         <div class="col-md-6">
           <div class="row">
             <div class="col-3"><p class="text-center  bg-light border border-primary text-dark">农历</p></div>
-            <div class="col-9"><p class="text-left">{{ today.nongli }}</p></div>
+            <div class="col-9"><p class="text-left">{{ calendar?.lunarYear }} {{ calendar?.lunar }}</p></div>
           </div>
           <div class="row">
             <div class="col-3"><p class="text-center  bg-light border border-primary text-dark">生肖</p></div>
-            <div class="col-9"><p class="text-left">{{ today.shengxiao }}</p></div>
+            <div class="col-9"><p class="text-left">{{ calendar?.animalsYear }}</p></div>
           </div>
-        </div>
-        <div class="col-md-6">
-              <div class="row">
-                <div class="col-3"><p class="text-center  bg-light border border-primary text-dark">星座</p></div>
-                <div class="col-9"><p class="text-left">{{ today.star }}</p></div>
-              </div>
-              <div class="row">
-                <div class="col-3"><p class="text-center  bg-light border border-primary text-dark">岁次</p></div>
-                <div class="col-9"><p class="text-left">{{ today.suici }}</p></div>
-              </div>
         </div>
       </div>
         
@@ -33,69 +23,69 @@
         <div class="col-md-6">
           <div class="row">
             <div class="col-3"><p class="text-center  border border-secondary text-dark">宜</p></div>
-            <div class="col-9"><p class="text-left">{{ today.yi }}</p></div>
+            <div class="col-9"><p class="text-left">{{ calendar?.suit }}</p></div>
           </div>
           <div class="row">
             <div class="col-3"><p class="text-center   border border-secondary text-dark">忌</p></div>
-            <div class="col-9"><p class="text-left">{{ today.ji }}</p></div>
+            <div class="col-9"><p class="text-left">{{ calendar?.avoid }}</p></div>
           </div>
         </div>
-        <div class="col-md-6">
+        <!--div class="col-md-6">
           
           <div class="row">
             <div class="col-3"><p class="text-center  border border-secondary text-dark">冲</p></div>
-            <div class="col-9"><p class="text-left">{{ today.chong }}</p></div>
+            <div class="col-9"><p class="text-left">{{ calendar?.chong }}</p></div>
           </div>
           <div class="row">
             <div class="col-3"><p class="text-center  border border-secondary text-dark">吉日</p></div>
-            <div class="col-9"><p class="text-left">{{ today.jiri }}</p></div>
+            <div class="col-9"><p class="text-left">{{ calendar?.jiri }}</p></div>
           </div>
-        </div>
+        </div-->
       </div>
       
       <hr/>
-      <div class="row">
+      <!--div class="row">
         <div class="col-md-6">
           <div class="row">
             <div class="col-3"><p class="text-center  border border-danger text-dark">财神</p></div>
-            <div class="col-9"><p class="text-left">{{ today.caishen }}</p></div>
+            <div class="col-9"><p class="text-left">{{ calendar?.caishen }}</p></div>
           </div>
           <div class="row">
             <div class="col-3"><p class="text-center  border border-danger text-dark">干支</p></div>
-            <div class="col-9"><p class="text-left">{{ today.ganzhi }}</p></div>
+            <div class="col-9"><p class="text-left">{{ calendar?.ganzhi }}</p></div>
           </div>
           <div class="row">
             <div class="col-3"><p class="text-center  border border-danger text-dark">吉神宜趋</p></div>
-            <div class="col-9"><p class="text-left">{{ today.jishenyiqu }}</p></div>
+            <div class="col-9"><p class="text-left">{{ calendar?.jishenyiqu }}</p></div>
           </div>
           <div class="row">
               <div class="col-3"><p class="text-center  border border-danger text-dark">煞</p></div>
-              <div class="col-9"><p class="text-left">{{ today.sha }}</p></div>
+              <div class="col-9"><p class="text-left">{{ calendar?.sha }}</p></div>
             </div>
         </div>
         <div class="col-md-6">
           
               <div class="row">
                 <div class="col-3"><p class="text-center  border border-danger text-dark">胎神</p></div>
-                <div class="col-9"><p class="text-left">{{ today.taishen }}</p></div>
+                <div class="col-9"><p class="text-left">{{ calendar?.taishen }}</p></div>
               </div>
               <div class="row">
                 <div class="col-3"><p class="text-center  border border-danger text-dark">五行</p></div>
-                <div class="col-9"><p class="text-left">{{ today.wuxing }}</p></div>
+                <div class="col-9"><p class="text-left">{{ calendar?.wuxing }}</p></div>
               </div>
               <div class="row">
                 <div class="col-3"><p class="text-center  border border-danger text-dark">凶神</p></div>
-                <div class="col-9"><p class="text-left">{{ today.xiongshen }}</p></div>
+                <div class="col-9"><p class="text-left">{{ calendar?.xiongshen }}</p></div>
               </div>
               <div class="row">
                 <div class="col-3"><p class="text-center  border border-danger text-dark">喜神</p></div>
-                <div class="col-9"><p class="text-left">{{ today.xishen }}</p></div>
+                <div class="col-9"><p class="text-left">{{ calendar?.xishen }}</p></div>
               </div>
               <div class="row">
                 <div class="col-3"><p class="text-center  border border-danger text-dark">知日</p></div>
-                <div class="col-9"><p class="text-left">{{ today.zhiri }}</p></div>
+                <div class="col-9"><p class="text-left">{{ calendar?.zhiri }}</p></div>
               </div>
         </div>
-      </div>
+      </div-->
       
 </div>

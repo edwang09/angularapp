@@ -23,26 +23,26 @@
           <div *ngIf="calendar">
             <div class="row">
               <div class="col-7 text-left p-3">
-                <p class="h3">{{ calendar.date.slice(0,4) }}</p>
-                <p class="h4">{{ calendar.date.slice(5,7)}}月
+                <p class="h3">{{ DateToday.year }}</p>
+                <p class="h4">{{ DateToday.month }}月
                 </p>
               </div>
               <div class="col-5 text-center">
-                <p class="display-2">{{ calendar.date.slice(8,10) }}</p>
+                <p class="display-2">{{ DateToday.date }}</p>
               </div>
             </div>
             <hr/>
             <div class="row">
               <div class="col-3"><p class="icontext bg-secondary text-white">农历</p></div>
-              <div class="col-9"><p class="text-left">{{ calendar.nongli }}</p></div>
+              <div class="col-9"><p class="text-left">{{ calendar.lunarYear }} {{ calendar.lunar }}</p></div>
             </div>
             <div class="row">
               <div class="col-3"><p class="icontext bg-primary text-white">宜</p></div>
-              <div class="col-9"><p class="text-left">{{ calendar.yi }}</p></div>
+              <div class="col-9"><p class="text-left">{{ calendar.suit }}</p></div>
             </div>
             <div class="row">
               <div class="col-3"><p class="icontext bg-danger text-white">忌</p></div>
-              <div class="col-9"><p class="text-left">{{ calendar.ji }}</p></div>
+              <div class="col-9"><p class="text-left">{{ calendar.avoid }}</p></div>
             </div>
             <hr/>
             <a class="btn btn-white border border-primary" href="/today" ><i class="fa fa-align-left"></i> 更多详细</a>

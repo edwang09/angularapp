@@ -14,7 +14,7 @@ const httpOptions = {
 })
 export class LunerapiService {
   LunerDataUrl:string = "https://pacific-plains-62879.herokuapp.com/api/fengshui/calendar"
-  secret:string = "6jv1EC5ukBgkRzj15295438855b2afccde0232"
+  secret:string = "ed096b1309889871313a683da0558ae5"
   
   constructor(
     private http: HttpClient
@@ -32,6 +32,7 @@ export class LunerapiService {
   
   getFormatedDate():string{
     const rawdate = new Date()
-    return rawdate.getFullYear() + "-" + ("0"+(rawdate.getMonth()+1)).slice(-2) + "-"+ ("0" + rawdate.getDate()).slice(-2)
+    console.log(rawdate.getFullYear() + "-" + (rawdate.getMonth()+1)+ "-"+ rawdate.getDate())
+    return rawdate.getFullYear() + "-" + (rawdate.getMonth()+1)+ "-"+ rawdate.getDate()
   }
 }

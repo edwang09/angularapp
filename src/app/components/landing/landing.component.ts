@@ -11,7 +11,12 @@ import { Post } from '../../models/post'
   styleUrls: ['./landing.component.scss']
 })
 export class LandingComponent implements OnInit {
-  calendar:Data
+  calendar: Data
+  DateToday:{
+    year: String,
+    month: String,
+    date: String
+  }
   posts:Post[]
   constructor(
     private http: HttpClient,
@@ -20,17 +25,20 @@ export class LandingComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    const rawdate = new Date();
+    this.DateToday={
+      year:rawdate.getFullYear().toString(),
+      month:(rawdate.getMonth()+1).toString() ,
+      date:rawdate.getDate().toString()
+    }
     this.LunerapiService.getLunerInfo(this.getFormatedDate()).subscribe((res) => {
-      if (res.msg==="请求成功") {
+      if (res.data) {
       this.calendar=res.data
     }});
-    this.PostsService.getPosts().subscribe((res)=>{
-      this.posts=res
-    })
   }
   getFormatedDate():string{
     const rawdate = new Date()
-    return rawdate.getFullYear() + "-" + ("0"+(rawdate.getMonth()+1)).slice(-2) + "-"+ ("0" + rawdate.getDate()).slice(-2)
+    return rawdate.getFullYear() + "-" + (rawdate.getMonth()+1) + "-"+  rawdate.getDate()
   }
 
 }
