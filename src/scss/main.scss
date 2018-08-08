@@ -9,11 +9,12 @@
     box-sizing: border-box;
     font-family: $font-family-chinese;
 }
+/*
 @font-face {
     font-family: "Kaiti";
     src: url("/font/Kaiti.ttf") format("ttf");
-  }
+  }*/
 .text-kaiti{
-    font-family: 'Kaiti';
-    /*font-family: $font-family-kaiti !important;*/
+    /*font-family: 'Kaiti';*/
+    font-family: $font-family-kaiti !important;
 }
