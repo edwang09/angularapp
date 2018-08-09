@@ -8,3 +8,8 @@
     background-color: #fff;
     color: #999999;
 }
+.nav-link{
+    &:hover{
+        cursor: pointer;
+    }
+}

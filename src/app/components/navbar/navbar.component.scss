@@ -17,6 +17,7 @@
     transition:all 0.2s;
     &:hover{
         background-color: $primary;
+        cursor: pointer;
         .nav-link{
             color:$light;
         }

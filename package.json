@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "deploy": "firebase deploy"
+    "deploy": "npm run build && firebase deploy"
   },
   "private": true,
   "dependencies": {
@@ -21,6 +21,7 @@
     "@angular/platform-browser": "^6.0.3",
     "@angular/platform-browser-dynamic": "^6.0.3",
     "@angular/router": "^6.0.3",
+    "@nicky-lenaers/ngx-scroll-to": "^1.0.0",
     "angular-froala-wysiwyg": "^2.8.4",
     "angular2-flash-messages": "^2.0.5",
     "angularfire2": "^5.0.0-rc.10",

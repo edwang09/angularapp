@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import { HttpClientModule } from '@angular/common/http';
 import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
+import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 
 import {environment} from '../environments/environment';
 import { AngularFireModule } from 'angularfire2';
@@ -69,7 +70,8 @@ import { ContactComponent } from './components/contact/contact.component'
     AngularFireAuthModule,
     AngularFireStorageModule,
     FroalaEditorModule.forRoot(), 
-    FroalaViewModule.forRoot()
+    FroalaViewModule.forRoot(),
+    ScrollToModule.forRoot()
   ],
   providers: [PostsService],
   bootstrap: [AppComponent]
