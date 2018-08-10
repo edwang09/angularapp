@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/Forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import { HttpClientModule } from '@angular/common/http';
@@ -22,7 +22,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { SettingComponent } from './components/setting/setting.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
-import { AppRoutingModule } from './/app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 import { AddClientComponent } from './components/add-client/add-client.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LandingComponent } from './components/landing/landing.component';
@@ -33,7 +33,16 @@ import { ConsultingComponent } from './components/consulting/consulting.componen
 import { IntroductionComponent } from './components/introduction/introduction.component';
 import { TodayComponent } from './components/today/today.component';
 import { PostsComponent } from './components/posts/posts.component';
-import { ContactComponent } from './components/contact/contact.component'
+import { ContactComponent } from './components/contact/contact.component';
+import { BaziformComponent } from './components/baziform/baziform.component';
+import { BaziresultComponent } from './components/baziresult/baziresult.component';
+
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material';//needed for date picker to work
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 @NgModule({
   declarations: [
@@ -56,11 +65,14 @@ import { ContactComponent } from './components/contact/contact.component'
     IntroductionComponent,
     TodayComponent,
     PostsComponent,
-    ContactComponent
+    ContactComponent,
+    BaziformComponent,
+    BaziresultComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     FlashMessagesModule.forRoot(),
     AppRoutingModule,
     HttpClientModule,
@@ -71,7 +83,12 @@ import { ContactComponent } from './components/contact/contact.component'
     AngularFireStorageModule,
     FroalaEditorModule.forRoot(), 
     FroalaViewModule.forRoot(),
-    ScrollToModule.forRoot()
+    ScrollToModule.forRoot(),
+    BrowserAnimationsModule,
+    MatInputModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [PostsService],
   bootstrap: [AppComponent]

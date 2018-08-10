@@ -1,0 +1,13 @@
+.card{
+    min-height:80vh;
+    padding:2rem 2rem;
+    margin:2rem 0;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    .form-group{
+        margin:0.5rem 0;
+        font-size: 130%;
+        width:70%;
+    }
+}

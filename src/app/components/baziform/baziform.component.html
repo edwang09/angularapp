@@ -1,0 +1,95 @@
+<div class="modal fade" id="construct" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">施工中</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          该功能还在施工中，敬请期待。
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="container">
+  <p class="display-4">
+    在线八字测算
+  </p>
+  <div class="card">
+      <form (submit)="onSubmit()">
+          <p class='lead'>
+            输入出生日期，计算精确的生辰八字细节
+          </p >
+          <hr/>
+          <mat-form-field class="form-group">
+            <input matInput placeholder="出生地" name="birthplace"  [(ngModel)]="birthplace"  >
+          </mat-form-field>
+          <mat-form-field class="form-group">
+            <input matInput placeholder="出生地经度(-180 ~ 180)"  name="longitute" type="number" min="-180" max="180" [(ngModel)]="longitute" >
+          </mat-form-field>
+          <mat-form-field class="form-group">
+              <input matInput [matDatepicker]="picker" placeholder="出生日期"(dateChange)="dateChange($event)" >
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker touchUi #picker></mat-datepicker>
+          </mat-form-field>
+          <mat-form-field class="form-group">
+              <mat-select placeholder="出生小时" [(value)]="hour">
+                  <mat-option value="0">0 点</mat-option>
+                  <mat-option value="1">1 点</mat-option>
+                  <mat-option value="2">2 点</mat-option>
+                  <mat-option value="3">3 点</mat-option>
+                  <mat-option value="4">4 点</mat-option>
+                  <mat-option value="5">5 点</mat-option>
+                  <mat-option value="6">6 点</mat-option>
+                  <mat-option value="7">7 点</mat-option>
+                  <mat-option value="8">8 点</mat-option>
+                  <mat-option value="9">9 点</mat-option>
+                  <mat-option value="10">10 点</mat-option>
+                  <mat-option value="11">11 点</mat-option>
+                  <mat-option value="12">12 点</mat-option>
+                  <mat-option value="13">13 点</mat-option>
+                  <mat-option value="14">14 点</mat-option>
+                  <mat-option value="15">15 点</mat-option>
+                  <mat-option value="16">16 点</mat-option>
+                  <mat-option value="17">17 点</mat-option>
+                  <mat-option value="18">18 点</mat-option>
+                  <mat-option value="19">19 点</mat-option>
+                  <mat-option value="20">20 点</mat-option>
+                  <mat-option value="21">21 点</mat-option>
+                  <mat-option value="22">22 点</mat-option>
+                  <mat-option value="23">23 点</mat-option>
+              </mat-select>
+            </mat-form-field>
+          
+          <mat-form-field class="form-group">
+              <mat-select placeholder="出生分钟" [(value)]="min">
+                  <mat-option value="5">0 ~ 10 分</mat-option>
+                  <mat-option value="15">10 ~ 20  分</mat-option>
+                  <mat-option value="25">20 ~ 30  分</mat-option>
+                  <mat-option value="35">30 ~ 40  分</mat-option>
+                  <mat-option value="45">40 ~ 50  分</mat-option>
+                  <mat-option value="55">50 ~ 60  分</mat-option>
+              </mat-select>
+            </mat-form-field>
+          <mat-form-field class="form-group">
+            <mat-select placeholder="性别" [(value)]="gender">
+              <mat-option value="1">男</mat-option>
+              <mat-option value="0">女</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <div>
+              <!--input type="submit" value="提交" class="btn btn-primary"-->
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#construct">
+                  提交
+              </button>
+          </div>
+        </form>
+  </div>
+</div>

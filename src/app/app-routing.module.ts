@@ -14,6 +14,8 @@ import { IntroductionComponent } from './components/introduction/introduction.co
 import { TodayComponent } from './components/today/today.component';
 import { PostsComponent } from './components/posts/posts.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { BaziformComponent } from './components/baziform/baziform.component';
+import { BaziresultComponent } from './components/baziresult/baziresult.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 
 import { AuthGuard } from './guards/auth.guard';
@@ -28,9 +30,8 @@ const routes:Routes=[
   {path:"contact",component:ContactComponent},
   {path:"consulting",component:ConsultingComponent},
   {path:"add-post",component:AddPostComponent,  canActivate:[AuthGuard]},
-  {path:"client/edit/:id",component:EditClientComponent},
-  {path:"client/:id",component:ClientDetailsComponent},
-  {path:"settings",component:SettingComponent},
+  {path:"baziform",component:BaziformComponent },
+  {path:"baziresult",component:BaziresultComponent  },
   {path:"**",component:NotFoundComponent},
 ]
 

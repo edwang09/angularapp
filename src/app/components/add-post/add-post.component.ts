@@ -4,7 +4,7 @@ import { PostsService } from '../../services/posts.service'
 import { Router } from '@angular/router';
 import { FlashMessagesService } from 'angular2-flash-messages';
 
-import { Post } from '../../models/post'
+import { Post } from '../../models/Post'
 
 
 import { finalize } from 'rxjs/operators';

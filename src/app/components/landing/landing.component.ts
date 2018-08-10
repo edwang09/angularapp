@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { LunerapiService } from '../../services/lunerapi.service'
 import { PostsService } from '../../services/posts.service'
 import { Data } from '../../models/calendarapiresponse'
-import { Post } from '../../models/post'
+import { Post } from '../../models/Post'
 
 @Component({
   selector: 'app-landing',
@@ -19,9 +19,7 @@ export class LandingComponent implements OnInit {
   }
   posts:Post[]
   constructor(
-    private http: HttpClient,
-    private LunerapiService:LunerapiService,
-    private PostsService:PostsService
+    private LunerapiService:LunerapiService
   ) { }
 
   ngOnInit() {
