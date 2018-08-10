@@ -16,6 +16,7 @@ import { PostsComponent } from './components/posts/posts.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { BaziformComponent } from './components/baziform/baziform.component';
 import { BaziresultComponent } from './components/baziresult/baziresult.component';
+import { AboutmeComponent } from './components/aboutme/aboutme.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 
 import { AuthGuard } from './guards/auth.guard';
@@ -32,6 +33,7 @@ const routes:Routes=[
   {path:"add-post",component:AddPostComponent,  canActivate:[AuthGuard]},
   {path:"baziform",component:BaziformComponent },
   {path:"baziresult",component:BaziresultComponent  },
+  {path:"aboutme",component:AboutmeComponent  },
   {path:"**",component:NotFoundComponent},
 ]
 
