@@ -1,6 +1,5 @@
 .card{
     min-height:80vh;
-    padding:2rem 2rem;
     margin:2rem 0;
     display: flex;
     flex-direction: column;
@@ -10,4 +9,10 @@
         font-size: 130%;
         width:70%;
     }
+    
+  @media screen and (max-width: 500px) {
+    .form-group{
+        width:90%;
+    }
+  }
 }

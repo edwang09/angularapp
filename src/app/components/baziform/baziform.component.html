@@ -1,45 +1,26 @@
-<div class="modal fade" id="construct" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">施工中</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          该功能还在施工中，敬请期待。
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
-        </div>
-      </div>
-    </div>
-</div>
-
-<div class="container">
+<div class="container" [hidden]="showresult">
   <p class="display-4">
     在线八字测算
   </p>
   <div class="card">
-      <form (submit)="onSubmit()">
+      <form (ngSubmit)="onSubmit()" #baziform="ngForm" >
           <p class='lead'>
             输入出生日期，计算精确的生辰八字细节
           </p >
           <hr/>
           <mat-form-field class="form-group">
-            <input matInput placeholder="出生地" name="birthplace"  [(ngModel)]="birthplace"  >
+            <input matInput placeholder="出生地" name="birthplace"  [(ngModel)]="baziForm.birthplace" required >
           </mat-form-field>
           <mat-form-field class="form-group">
-            <input matInput placeholder="出生地经度(-180 ~ 180)"  name="longitute" type="number" min="-180" max="180" [(ngModel)]="longitute" >
+            <input matInput placeholder="出生地经度(-180 ~ 180)"  name="longitute1" type="number" min="-180" max="180" [(ngModel)]="baziForm.longitute1" #longitute1="ngModel" required>
           </mat-form-field>
           <mat-form-field class="form-group">
-              <input matInput [matDatepicker]="picker" placeholder="出生日期"(dateChange)="dateChange($event)" >
+              <input matInput [matDatepicker]="picker" placeholder="出生日期" (dateChange)="dateChange($event)" required>
               <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
               <mat-datepicker touchUi #picker></mat-datepicker>
           </mat-form-field>
           <mat-form-field class="form-group">
-              <mat-select placeholder="出生小时" [(value)]="hour">
+              <mat-select placeholder="出生小时" [value]="baziForm.hour" (selectionChange)="hourChange($event)" required>
                   <mat-option value="0">0 点</mat-option>
                   <mat-option value="1">1 点</mat-option>
                   <mat-option value="2">2 点</mat-option>
@@ -68,7 +49,7 @@
             </mat-form-field>
           
           <mat-form-field class="form-group">
-              <mat-select placeholder="出生分钟" [(value)]="min">
+              <mat-select placeholder="出生分钟" [value]="baziForm.min" (selectionChange)="minChange($event)" required>
                   <mat-option value="5">0 ~ 10 分</mat-option>
                   <mat-option value="15">10 ~ 20  分</mat-option>
                   <mat-option value="25">20 ~ 30  分</mat-option>
@@ -78,7 +59,7 @@
               </mat-select>
             </mat-form-field>
           <mat-form-field class="form-group">
-            <mat-select placeholder="性别" [(value)]="gender">
+            <mat-select placeholder="性别" [value]="baziForm.gender" (selectionChange)="genderChange($event)" required>
               <mat-option value="1">男</mat-option>
               <mat-option value="0">女</mat-option>
             </mat-select>
@@ -86,10 +67,15 @@
 
           <div>
               <!--input type="submit" value="提交" class="btn btn-primary"-->
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#construct">
+              <button type="submit" *ngIf="!showloading" class="btn btn-primary" >
                   提交
+              </button>
+              <button *ngIf="showloading" class="btn btn-primary" >
+                提交中。。。 <i class="fa fa-circle-o-notch fa-spin" style="font-size:24px"></i>
               </button>
           </div>
         </form>
   </div>
 </div>
+
+<app-baziresult [hidden]="!showresult" [result]="result"></app-baziresult>
