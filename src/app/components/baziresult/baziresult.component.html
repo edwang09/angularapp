@@ -1,8 +1,138 @@
 
-<div class="container">
+<div class="container" *ngIf="result!={}">
+  
+  <p class="display-4">
+        {{result.qiankun}}
+  </p>
+
+
   <div class="card">
-    <p class="display-5">
-      {{result.qiankun}}
-    </p>
+    <div class="card-header">
+      基本信息
+    </div>
+    <div class="card-body">
+      <p class="h4">
+        出生地： {{result.birthplace}}
+      </p>
+      <hr/>
+      <p class="h4">
+        出生钟表时间：{{result.clocktime}}
+      </p>
+      <p class="h4">
+        实际出生时间：{{result.realtime}}
+      </p>
+      <p class="h4">
+        起运：{{result.qiyun}}
+      </p>
+      <p class="h4">
+        交运：{{result.jiaoyun}}
+      </p>
+    </div>
   </div>
+
+
+  <div class="card">
+    
+    <div class="card-header">
+        八字信息
+    </div>
+    <div class="card-body">
+        <table class="table text-center my-5" *ngIf="result.bazi">
+            <thead>
+              <tr>
+                <th colspan="8">生辰八字  {{result.kong}}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td *ngFor = "let item of result.bazi[0]">{{item}}</td>
+              </tr>
+              <tr>
+                <td *ngFor = "let item of result.bazi[1]">{{item}}</td>
+              </tr>
+              <tr>
+                <td *ngFor = "let item of result.bazi[2]">{{item}}</td>
+              </tr>
+            </tbody>
+          </table>
+                
+          <table class="table text-center my-5" *ngIf="result.tiangan">
+              <thead>
+                <tr>
+                  <th colspan="8">天干 </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td *ngFor = "let item of result.tiangan[0]">{{item}}</td>
+                </tr>
+                <tr>
+                  <td *ngFor = "let item of result.tiangan[1]">{{item}}</td>
+                </tr>
+                <tr>
+                  <td *ngFor = "let item of result.tiangan[2]">{{item}}</td>
+                </tr>
+              </tbody>
+            </table>
+    </div>
+  </div>
+  
+  <div class="card">
+    
+      <div class="card-header">
+          八字信息
+      </div>
+      <div class="card-body">
+          <div class="row">
+              <div class="col-md-6">
+                <p class="display-5">
+                  胎元
+                </p>
+                <ul class="list-group" *ngIf="result.taiyuan">
+                    <li class="list-group-item" *ngFor="let item of result.taiyuan[0]">{{item}}</li>
+                </ul>
+              </div>
+              <div class="col-md-6">
+                  <p class="display-5">
+                    命宫
+                  </p>
+                  <ul class="list-group" *ngIf="result.minggong">
+                      <li class="list-group-item" *ngFor="let item of result.minggong[0]">{{item}}</li>
+                  </ul>
+              </div>
+            </div>
+      </div>
+  </div>
+
+  <div class="card">
+    
+      <div class="card-header">
+          大运信息
+      </div>
+      <div class="card-body">
+        <table class="table text-center my-5" *ngIf="result.dayun">
+          <thead>
+            <tr>
+              <th colspan="8">大运 </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td *ngFor = "let item of result.dayun[0]">{{item}}</td>
+            </tr>
+            <tr>
+              <td *ngFor = "let item of result.dayun[1]">{{item}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <p class="h5">
+      *微信扫描下方二维码，咨询专业的八字分析。
+    </p>
+
+    <button class="btn btn-primary btn-lg mt-5" (click)="back()">
+      再测一次
+    </button>
 </div>

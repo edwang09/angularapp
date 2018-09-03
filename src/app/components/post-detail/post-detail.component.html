@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" *ngIf="post">
   <p class="display-4">
     {{post.title}}
   </p>
@@ -8,4 +8,10 @@
   <hr/>
     <div class="my-5" [froalaView]="post.content"></div>
   <hr/>
+  <div class="my-2 clearfix">
+      <a class="float-left" *ngIf="prevpost " routerLink="/post/{{prevpost.id}}" ><== {{prevpost.title}}</a>
+      <a class="float-right" *ngIf=" nextpost" routerLink="/post/{{nextpost.id}}" >{{nextpost.title}} ==></a>
+  </div>
+  <hr/>
+
 </div>

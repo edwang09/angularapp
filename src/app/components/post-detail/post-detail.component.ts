@@ -1,17 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import {Post} from '../../models/Post';
 import {PostsService} from '../../services/posts.service';
-import {Router, ActivatedRoute, Params } from '@angular/router';
-import {FlashMessagesService} from 'angular2-flash-messages'
+import {Router, ActivatedRoute, Params, NavigationEnd, RoutesRecognized } from '@angular/router';
+import {FlashMessagesService} from 'angular2-flash-messages';
 
 @Component({
   selector: 'app-post-detail',
   templateUrl: './post-detail.component.html',
   styleUrls: ['./post-detail.component.css']
 })
-export class PostDetailComponent implements OnInit {
+export class PostDetailComponent implements OnInit, OnDestroy{
   post: Post;
+  routersub;
   id:string;
+  nextpost: Post;
+  prevpost: Post;
   constructor(
     private postService: PostsService,
     private router: Router,
@@ -20,13 +23,25 @@ export class PostDetailComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.getContent()
+    this.routersub = this.router.events.subscribe((val) => {
+      this.getContent()
+    });
+  }
+
+  getContent(){
     // Get id from url
     this.id = this.route.snapshot.params['id'];
-    // Get client
+    // Get this post
     this.postService.getPost(this.id).subscribe(post => {
-
-      console.log(post)
+      //console.log(post)
       this.post = post;
+    });
+    // Get next and previous posts
+    this.postService.getPosts().subscribe(res => {
+      var index = res.findIndex((post)=>{return post.id==this.id})
+      this.prevpost = res[index-1]
+      this.nextpost = res[index+1]
     });
   }
 
@@ -40,4 +55,7 @@ export class PostDetailComponent implements OnInit {
     }
   }
 
+  ngOnDestroy(){
+    this.routersub.unsubscribe()
+  }
 }

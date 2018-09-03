@@ -26,18 +26,17 @@ export class BaziformComponent implements OnInit {
     this.showresult=false
     this.showloading=false
     this.baziForm={ 
-      birthplace:"Fort Mill",
-      day:"22",
-      gender:"0",
-      hour:"2",
+      birthplace:"",
+      day:"",
+      gender:"",
+      hour:"",
       longitute1:120,
       longitute2:"0",
-      min:"15",
-      month:"7",
-      year:"2018"
+      min:"",
+      month:"",
+      year:""
   }
     this.result={
-
     }
   }
   minChange($event){
@@ -66,6 +65,7 @@ export class BaziformComponent implements OnInit {
         (res) => {
           this.showresult=true
           this.result=res
+          this.showloading=false
         },
         err=>{
           console.error(err)
@@ -77,7 +77,12 @@ export class BaziformComponent implements OnInit {
       const modalRef = this.modalService.open(ModalComponent);
       modalRef.componentInstance.title = '信息不全';
       modalRef.componentInstance.body = '请完成表格。';
+      this.showloading=false
     }
+  }
+  retry(){
+    this.showresult=false;
+    this.result={}
   }
   get diagnostic() { return JSON.stringify(this.baziForm); }
 }

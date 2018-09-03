@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-baziresult',
@@ -7,6 +7,7 @@ import { Component, OnInit, Input, OnChanges } from '@angular/core';
 })
 export class BaziresultComponent implements OnInit, OnChanges {
   @Input() result;
+  @Output() retry = new EventEmitter();
   constructor() { }
 
   ngOnInit() {
@@ -14,6 +15,10 @@ export class BaziresultComponent implements OnInit, OnChanges {
   }
   ngOnChanges() {
     console.log(this.result)
+  }
+  back(){
+    console.log("goback")
+    this.retry.emit()
   }
   
 
