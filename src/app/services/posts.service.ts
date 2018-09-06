@@ -44,15 +44,23 @@ export class PostsService {
       }
     })
   )
-
-    return this.post;
+  return this.post;
   }
+
+
+  
+  updatePost(post: Post) {
+    this.postDoc = this.afs.doc(`posts/${post.id}`);
+    this.postDoc.update(post);
+  }
+
+
   newPost(post: Post) {
     this.postsCollection.add(post);
   }
   
-  deletePost(post: Post) {
-    this.postDoc = this.afs.doc(`posts/${post.id}`);
+  deletePost(postid: String) {
+    this.postDoc = this.afs.doc(`posts/${postid}`);
     this.postDoc.delete();
   }
 

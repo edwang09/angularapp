@@ -7,7 +7,9 @@
                 <h2  class="text-dark">{{post.title}}</h2>
                 <hr/>
                 <p class="text-dark">{{post.summary}}</p>
-                <button class="btn btn-secondary text-white" routerLink="/post/{{post.id}}" >阅读全文</button>
+                <button class="btn btn-secondary text-white mx-1" routerLink="/post/{{post.id}}" >阅读全文</button>
+                <button *ngIf="isLoggedIn" class="btn btn-success text-white mx-1" routerLink="/edit-post/{{post.id}}" >编辑文章</button>
+                <button *ngIf="isLoggedIn" class="btn btn-danger text-white mx-1" (click)="deletePost(post.id)">删除文章</button>
               </div>
               <div class="col-md-3 d-none d-md-block">
                 <img *ngIf="post.caption" class="img-fluid img-thumbnail rounded float-right" src="{{post.caption}}" alt="">

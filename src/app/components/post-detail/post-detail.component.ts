@@ -1,8 +1,9 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import {Post} from '../../models/Post';
 import {PostsService} from '../../services/posts.service';
-import {Router, ActivatedRoute, Params, NavigationEnd, RoutesRecognized } from '@angular/router';
+import {Router, ActivatedRoute} from '@angular/router';
 import {FlashMessagesService} from 'angular2-flash-messages';
+import { ScrollToService, ScrollToConfigOptions } from '@nicky-lenaers/ngx-scroll-to';
 
 @Component({
   selector: 'app-post-detail',
@@ -19,14 +20,20 @@ export class PostDetailComponent implements OnInit, OnDestroy{
     private postService: PostsService,
     private router: Router,
     private route: ActivatedRoute,
-    private flashMessage: FlashMessagesService
+    private flashMessage: FlashMessagesService,
+    private _scrollToService: ScrollToService
   ) { }
 
   ngOnInit() {
     this.getContent()
     this.routersub = this.router.events.subscribe((val) => {
       this.getContent()
+      const config: ScrollToConfigOptions = {
+        target: "title"
+      };
+      this._scrollToService.scrollTo(config);
     });
+
   }
 
   getContent(){
@@ -47,7 +54,7 @@ export class PostDetailComponent implements OnInit, OnDestroy{
 
   onDeleteClick() { 
     if(confirm('Are you sure?')) {
-      this.postService.deletePost(this.post);
+      this.postService.deletePost(this.post.id);
       this.flashMessage.show('Post removed', {
         cssClass: 'alert-success', timeout: 4000
       });

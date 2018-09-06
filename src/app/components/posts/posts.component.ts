@@ -1,11 +1,9 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { LunerapiService } from '../../services/lunerapi.service'
 import { PostsService } from '../../services/posts.service'
-import { Data } from '../../models/calendarapiresponse'
+import { AuthService } from '../../services/auth.service';
 import { Post } from '../../models/Post'
 import { filter, pairwise } from "rxjs/operators"
-import {Router, ActivatedRoute, Params, NavigationEnd, RoutesRecognized } from '@angular/router';
+import {Router, ActivatedRoute, RoutesRecognized } from '@angular/router';
 import { ScrollToService, ScrollToConfigOptions } from '@nicky-lenaers/ngx-scroll-to';
 @Component({
   selector: 'app-posts',
@@ -15,11 +13,12 @@ import { ScrollToService, ScrollToConfigOptions } from '@nicky-lenaers/ngx-scrol
 export class PostsComponent implements OnInit, OnDestroy {
   routersub
   scrollid
+  isLoggedIn
   posts:Post[]
   constructor(
+    private authService: AuthService,
     private PostsService:PostsService,
     private router: Router,
-    private route: ActivatedRoute,
     private _scrollToService: ScrollToService
   ) {
   }
@@ -33,7 +32,7 @@ export class PostsComponent implements OnInit, OnDestroy {
       if (this.scrollid && this.scrollid.substring(0,6)=="/post/"){
         setTimeout(
           ()=>{
-            console.log(this.scrollid)
+            //console.log(this.scrollid)
             const config: ScrollToConfigOptions = {
               target: this.scrollid.substring(6)
             };
@@ -46,9 +45,27 @@ export class PostsComponent implements OnInit, OnDestroy {
     this.PostsService.getPosts().subscribe((res)=>{
       this.posts=res
     })
-    
+    this.authService.getAuth().subscribe(auth => {
+      if(auth) {
+        this.isLoggedIn = true;
+      } else {
+        this.isLoggedIn = false;
+      }
+    });
 }
   
+
+//delete posts
+deletePost(postid){
+  console.log(postid)
+  this.PostsService.deletePost(postid)
+  /*
+  this.PostsService.getPosts().subscribe((res)=>{
+    this.posts=res
+  })*/
+}
+
+
   ngOnDestroy(){
   }
 

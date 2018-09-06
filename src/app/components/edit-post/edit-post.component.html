@@ -1,11 +1,5 @@
 <div class="container">
-  <div *ngIf="uploadingImage" class="loader">
-    
-
-
-
-  </div>
-  <form  (ngSubmit)="onSubmit()" class= "mt-5">
+  <form *ngIf="post" (ngSubmit)="onSubmit()" class= "mt-5">
     <div class="form-group">
       <label class="display-4" for="title">Title</label>
       <input type="text" class="form-control form-control-lg" id="title" placeholder="Enter your title here" [(ngModel)]="post.title" name="title"/>
@@ -25,18 +19,22 @@
       <input type="text" class="form-control" id="summary" placeholder="Enter your name here" [(ngModel)]="post.summary" name="summary"/>
     </div>
 
+        
     <div class="my-5" [froalaEditor]='options'  [(froalaModel)]="post.content"></div>
     
-    <button type="button" (click)="togglePreview()" class="btn btn-success  mx-5">{{showPreview?"关闭预览":"打开预览"}}</button>
-    <input type="submit" value="提交" class="btn btn-primary  mx-5">
+    <div class="d-flex  justify-content-around">
+          <button type="button" (click)="togglePreview()" class="btn btn-success btn-block mr-5">{{showPreview?"关闭预览":"打开预览"}}</button>
+
+          <button type="submit" class="btn btn-primary btn-block ml-5 my-0">提交</button>
+    </div>
   </form>
 
   <hr/>
-    <div class="my-5" *ngIf="showPreview" [froalaView]="post.content"></div>
+    <div class="my-5" *ngIf="showPreview"  [froalaView]="post.content"></div>
   <hr/>
 
   <!--div class="form-group">
       <label for="content">Contents</label>
       <textarea class="form-control" [(ngModel)]="post.content"  name="content"  id="content" ></textarea>
-    </div-->
+  </div-->
 </div>

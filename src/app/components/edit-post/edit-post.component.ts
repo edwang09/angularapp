@@ -1,61 +1,67 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireStorage } from 'angularfire2/storage';
 import { PostsService } from '../../services/posts.service'
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { FlashMessagesService } from 'angular2-flash-messages';
-import { Post } from '../../models/Post'
-import { finalize } from 'rxjs/operators';
 
+import { Post } from '../../models/Post'
+
+
+import { finalize } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 @Component({
-  selector: 'app-add-post',
-  templateUrl: './add-post.component.html',
-  styleUrls: ['./add-post.component.css']
+  selector: 'app-edit-post',
+  templateUrl: './edit-post.component.html',
+  styleUrls: ['./edit-post.component.scss']
 })
-export class AddPostComponent implements OnInit {
+export class EditPostComponent implements OnInit {
+  post: Post
+  public options: Object
   uploadingImage: Boolean
   showPreview: Boolean = false
-
-  post: Post = {
-    title:"",
-    caption:"",
-    summary:"",
-    author:"",
-    createDate: Date.now(),
-    content: ''
-  }
-  public options: Object
   
   constructor(
     private storage: AngularFireStorage,
     private PostsService:PostsService,
     private router: Router,
+    private route: ActivatedRoute,
     private flashMessage: FlashMessagesService
   ) { }
 
   ngOnInit() {
+    
+    const id = this.route.snapshot.params['id'];
+    this.PostsService.getPost(id).subscribe((post)=>{
+      this.post = post
+    })
+
     let that = this
     this.options = {
       events : {
         'froalaEditor.image.inserted' : function(e, editor, $img, response) {
-          that.uploadingImage=true
           // Points to the root reference
           that.uploadImage($img[0].src)
         }
       }
     }
   }
+
   togglePreview(){
     this.showPreview=!this.showPreview
   }
   onSubmit() {
       // Add new client
-      this.PostsService.newPost(this.post);
+      this.PostsService.updatePost(this.post);
       // Show message
-      this.flashMessage.show('New post added', {
+      this.flashMessage.show('Post updated', {
         cssClass: 'alert-success', timeout: 4000
       });
       // Redirect to dash
       this.router.navigate(['/']);
+  }
+  addtext(){
+  }
+  addimage(){
   }
   uploadImage(src){
     console.log("src: "+src)

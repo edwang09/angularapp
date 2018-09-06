@@ -51,7 +51,8 @@ import {MatNativeDateModule} from '@angular/material';//needed for date picker t
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AboutmeComponent } from './components/aboutme/aboutme.component';
-import { ModalComponent } from './components/@common/modal/modal.component'
+import { ModalComponent } from './components/@common/modal/modal.component';
+import { EditPostComponent } from './components/edit-post/edit-post.component'
 
 @NgModule({
   declarations: [
@@ -78,7 +79,8 @@ import { ModalComponent } from './components/@common/modal/modal.component'
     BaziformComponent,
     BaziresultComponent,
     AboutmeComponent,
-    ModalComponent
+    ModalComponent,
+    EditPostComponent
   ],
   imports: [
     BrowserModule,
