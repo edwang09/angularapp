@@ -4,32 +4,47 @@
     width: 100%;
     margin:0;
     padding:0;
+    display: flex;
+    justify-content: center;
     background: linear-gradient(90deg,
-      rgba(#fff ,0.8) 30%, 
-      rgba(#b308b3,0.8) 80%
+      rgba($light ,0.8) 30%, 
+      rgba($primary,0.8) 90%
     );
+    @include phone{
+        background: #b308b3;
+    }
     .logo{
         img{
-            width:100%;
+            width:35vw;
         }
-    }
-    .qrcode{
-        img{
-            width:100%;
+        @include phone{
+            display:none;
         }
     }
     .contact{
+        padding:2rem 3rem;
+        @include phoneandtablet{
+            padding:1rem 1rem;
+        }
+        color:$dark;
+        @include phone{
+            color:$light;
+        }
         a{
-            color:white;
+            color:$dark;
             text-decoration: none;
             &:hover{
                 color:white;
             }
+            @include phone{
+                color:$light;
+            }
         }
-    }
-}
-@media (max-width: 480px){
-    .footer{
-      background: #b308b3;
+        .qrcode{
+            img{
+                width:10rem;
+                height:10rem;
+            }
+        }
     }
 }

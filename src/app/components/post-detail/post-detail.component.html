@@ -1,7 +1,7 @@
 <div class="container" *ngIf="post">
-  <p class="display-4" id="title">
+  <h4  id="title">
     {{post.title}}
-  </p>
+  </h4>
   <p>{{post.author}}</p>
   <small>{{post.createDate | date}}</small>
   
@@ -9,8 +9,8 @@
     <div class="my-5" [froalaView]="post.content"></div>
   <hr/>
   <div class="my-2 clearfix">
-      <a class="float-left" *ngIf="prevpost " routerLink="/post/{{prevpost.id}}" ><== {{prevpost.title}}</a>
-      <a class="float-right" *ngIf=" nextpost" routerLink="/post/{{nextpost.id}}" >{{nextpost.title}} ==></a>
+      <a class="float-left" *ngIf="prevpost " routerLink="/cn/post/{{prevpost.id}}" ><== {{prevpost.title}}</a>
+      <a class="float-right" *ngIf=" nextpost" routerLink="/cn/post/{{nextpost.id}}" >{{nextpost.title}} ==></a>
   </div>
   <hr/>
 

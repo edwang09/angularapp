@@ -1,9 +1,56 @@
 @import 'node_modules/bootstrap/scss/_functions';
 @import '../../../scss/customVariables';
-.btn{
-transition: all 0.1s;
-&:hover{
-    transform: scale(1.1);
-    border-color:$primary;
-}
+@keyframes slideDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+  }
+.container{
+    position: relative;
+    background: white;
+    box-shadow: 1px 1px 3px #000;
+    padding: 3rem 5rem;
+    margin: 1rem auto;
+    @include phoneandtablet{
+        padding: 3rem 1rem;
+    }
+    .card{
+        animation: slideDown 0.6s ease;
+        margin: 2rem auto;
+        padding:2rem 3rem;
+        box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        display: flex;
+        justify-content: center;
+        
+        @include phoneandtablet{
+            padding:1rem 1rem;
+        }
+        .text{
+            width:75%;
+            .btn{
+                transition: all 0.1s;
+                &:hover{
+                    transform: scale(1.1);
+                    border-color:$primary;
+                }
+            }
+        }
+        .caption{
+            width:25%;
+            img{
+                padding:0.25rem;
+                border:solid 1px $light;
+                border-radius: 8px;
+                float:right;
+                width: 100%;
+
+            }
+        }
+    
+    }
 }

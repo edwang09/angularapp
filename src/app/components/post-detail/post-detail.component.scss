@@ -1,8 +1,6 @@
-
 @import 'node_modules/bootstrap/scss/_functions';
 @import '../../../scss/customVariables';
 .container{
-    text-align: center;
     position: relative;
     background: white;
     box-shadow: 1px 1px 3px #000;
@@ -13,11 +11,13 @@
     }
     h4{
         font-weight: bold;
+        color:$primary;
     }
     .card{
         box-shadow: 1px 1px 3px #000;
         max-width:800px;
         margin: 3rem auto;
+        padding: 3rem 1rem;
         display: flex;
         flex-direction: column;
         text-align: center;

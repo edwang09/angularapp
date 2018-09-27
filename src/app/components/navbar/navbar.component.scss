@@ -1,26 +1,99 @@
 @import 'node_modules/bootstrap/scss/_functions';
 @import '../../../scss/customVariables';
 .navbar{
-    margin:0 !important;
-    padding:0 !important;
+    padding:0 0;
+    background: $white;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-flow: row nowrap;
+    .navbar-brand{
+        img{
+            width:40px;
+            height: 40px;
+        }
+        .brand-name{
+            color: $primary;
+            font-family: $font-family-kaiti;
+        }
+    }
+    .navbar-nav{
+        list-style: none;
+        flex-direction: row;
+        .nav-item{
+            line-height: 40px;
+            display: inline-block;
+            width:5rem;
+            text-align: center;
+            transition:all 0.2s;
+            font-family: $font-family-kaiti;
+            a{
+                color:$dark;
+            }
+            &:hover{
+                background-color: $success;
+                cursor: pointer;
+                a{
+                    color:$light;
+
+                }
+            }
+        }
+            
+    
+    }
+    .btn-close{
+        display: none;
+    }
+}
+@media(max-width:992px){
+    
+.navbar{
+    margin: 0 auto;
+    padding: 0;
+    .open-slide{
+        display: inline-block;
+        margin:0.5rem 1rem;
+    }
+    .navbar-nav{
+        height:100%;
+        flex-direction: column;
+        width:0;
+        position:fixed;
+        z-index:1;
+        top:0;
+        left:0;
+        background-color: $secondary;
+        opacity:0.9;
+        overflow-x:hidden;
+        padding-top:60px;
+        transition:0.5s;
+        .nav-item{
+            width:100%
+        }
+        .btn-close{
+            display: inline;
+            position:absolute;
+            top:0;
+            right:22px;
+            font-size:36px;
+            margin-left:50px;
+            color:$success;
+            text-decoration: none;
+        }
+    }
+    .sidebar-open{
+        width:250px;
+    }
+    .navbar-brand{
+        margin: auto;
+    }
+}
 
 }
-.navbar-brand{
-    img{
-        width:40px;
-        height: 40px;
-    }
-}
-.nav-item{
-    line-height: 40px;
-    margin:0 auto;
-    transition:all 0.2s;
-    &:hover{
-        background-color: $primary;
-        cursor: pointer;
-        .nav-link{
-            color:$light;
-        }
-        
-    }
+
+@media(min-width:992px){
+.open-slide{display:none}
+
 }

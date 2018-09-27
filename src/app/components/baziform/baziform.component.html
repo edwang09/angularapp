@@ -1,19 +1,18 @@
 <div class="container" [hidden]="showresult">
-  <p class="display-4">
+  <h4>
     在线八字测算
-  </p>
+  </h4>
+  <h5 >
+    输入出生日期，计算精确的生辰八字细节
+  </h5 >
   <div class="card">
       <form (ngSubmit)="onSubmit()" #baziform="ngForm" >
-          <p class='lead'>
-            输入出生日期，计算精确的生辰八字细节
-          </p >
-          <hr/>
           <mat-form-field class="form-group">
             <input matInput placeholder="出生地" name="birthplace"  [(ngModel)]="baziForm.birthplace" required >
           </mat-form-field>
-          <mat-form-field class="form-group">
+          <!--mat-form-field class="form-group">
             <input matInput placeholder="出生地经度(-180 ~ 180)"  name="longitute1" type="number" min="-180" max="180" [(ngModel)]="baziForm.longitute1" #longitute1="ngModel" required>
-          </mat-form-field>
+          </mat-form-field-->
           <mat-form-field class="form-group">
               <input matInput [matDatepicker]="picker" placeholder="出生日期" (dateChange)="dateChange($event)" required>
               <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
@@ -50,6 +49,7 @@
           
           <mat-form-field class="form-group">
               <mat-select placeholder="出生分钟" [value]="baziForm.min" (selectionChange)="minChange($event)" required>
+                  <mat-option value="5">不知道</mat-option>
                   <mat-option value="5">0 ~ 10 分</mat-option>
                   <mat-option value="15">10 ~ 20  分</mat-option>
                   <mat-option value="25">20 ~ 30  分</mat-option>

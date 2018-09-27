@@ -3,8 +3,8 @@
 
 .landing-head {
   background:  linear-gradient(
-      rgba($light , 0.2), 
-      rgba($light, 0.2)
+      rgba($light , 0), 
+      rgba($light, 0)
     ), url('../../../assets/images/landingimage.jpg') no-repeat;
   background-size: cover;
   background-position: center;
@@ -17,7 +17,7 @@
     width:350px;
     min-height:520px;
     border-radius: 1rem;
-    border: $secondary 1.5px solid;
+    border: $primary 1.5px solid;
     padding:2rem;
     margin: 2rem 1rem;
     .btn{
@@ -31,6 +31,54 @@
     }
   }
 }
+
+.landing-motto{
+  color: $light;
+  padding:5rem 0;
+  background-color: $info;
+  .btn{
+    color:white;
+    transition: all 0.1s;
+    &:hover{
+      transform: scale(1.1);
+      background-color:$light;
+      color:$info;
+    }
+  }
+}
+
+.landing-intro{
+  background: white;
+  padding:2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  .card{
+    background-color: $light;
+    border: solid 1px $primary;
+    border-radius:5rem;
+    height: 35rem;
+    padding: 2rem 2rem;
+    transition: all 0.1s;
+    &:hover{
+      transform: scale(1.05);
+      border-width: 2px;
+      border-color: $warning;
+    }
+    .card-image{
+      margin: 0 auto;
+      img{
+        height: 10rem;
+        width: 10rem;
+      }
+    }
+    h3{
+      text-align: center;
+      font-weight: bold;
+      font-family: $font-family-kaiti;
+    }
+  }
+}
+
 @media (max-width:480px){
   .landing-head {
     .calendar{
@@ -51,33 +99,55 @@
       }
     }
   }
-}
-.landing-motto{
-  color: $primary;
-  padding:5rem 0;
-  background-color: $primary;
-  .btn{
-    color:white;
-    transition: all 0.1s;
-    &:hover{
-      transform: scale(1.1);
-      background-color:$light;
-      color:$primary;
+  .landing-intro{
+    .card{
+      margin: 1rem 0;
+      height: 40rem;
+      img{
+        height: 10rem;
+        width: 10rem;
+        display: block;
+        margin: 2rem auto;
+      }
+      &:hover {
+        background-color: $secondary;
+        cursor: pointer;
+      }
+      h4{
+        text-align: center;
+        font-weight: bold;
+        font-family: $font-family-kaiti;
+      }
     }
   }
+  
 }
-
-.landing-intro{
-  background: white;
-  padding:2rem;
-  img{
-    height:30rem;
-  }
-  .card-header{
-    background-color: $primary;
-    &:hover {
-      background-color: $secondary;
+@media (max-width:991px) and (min-width:480px){
+  .landing-intro{
+    .card{
+      display: flex;
+      flex-direction: row;
+      align-content: center;
+      justify-content: space-between;
+      height: auto;
+      margin:2rem 0;
+      .card-image{
+        margin: 2rem auto;
+        img{
+          height: 10rem;
+          width: 10rem;
+        }
+      }
+      &:hover {
+        background-color: $secondary;
+        cursor: pointer;
+      }
+      h4{
+        text-align: center;
+        font-weight: bold;
+        font-family: $font-family-kaiti;
+      }
     }
   }
+  
 }
-

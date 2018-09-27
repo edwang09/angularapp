@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'app-consulting',
   templateUrl: './consulting.component.html',
   styleUrls: ['./consulting.component.scss']
 })
-export class ConsultingComponent implements OnInit {
+export class ConsultingComponent implements AfterViewInit  {
 
   constructor() { }
 
-  ngOnInit() {
+  ngAfterViewInit() {
+}
+  activate(){
+    console.log("activated")
   }
-
 }

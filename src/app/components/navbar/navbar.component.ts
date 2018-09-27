@@ -13,6 +13,7 @@ export class NavbarComponent implements OnInit {
   isLoggedIn: boolean;
   loggedInUser: string;
   showRegister: boolean;
+  sidebar: boolean;
   constructor(
     private authService: AuthService,
     private router: Router,
@@ -29,6 +30,9 @@ export class NavbarComponent implements OnInit {
     });
   }
 
+  toggleSlideMenu(){
+    this.sidebar=!this.sidebar
+  }
   onLogoutClick() {
     this.authService.logout();
     this.flashMessage.show('You are now logged out', {

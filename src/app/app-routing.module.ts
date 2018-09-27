@@ -22,19 +22,22 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 
 import { AuthGuard } from './guards/auth.guard';
 const routes:Routes=[
-  {path:"",component:LandingComponent},
-  {path:"login",component:LoginComponent},
-  {path:"post/:id",component:PostDetailComponent},
-  {path:"introduction",component:IntroductionComponent},
-  {path:"today",component:TodayComponent},
-  {path:"posts",component:PostsComponent},
-  {path:"contact",component:ContactComponent},
-  {path:"consulting",component:ConsultingComponent},
-  {path:"add-post",component:AddPostComponent,  canActivate:[AuthGuard]},
-  {path:"edit-post/:id",component:EditPostComponent,  canActivate:[AuthGuard]},
-  {path:"baziform",component:BaziformComponent },
-  {path:"baziresult",component:BaziresultComponent  },
-  {path:"aboutme",component:AboutmeComponent  },
+  {path:"cn",children:[
+    {path:"",component:LandingComponent},
+    {path:"login",component:LoginComponent},
+    {path:"post/:id",component:PostDetailComponent},
+    {path:"introduction",component:IntroductionComponent},
+    {path:"today",component:TodayComponent},
+    {path:"posts",component:PostsComponent},
+    {path:"contact",component:ContactComponent},
+    {path:"consulting",component:ConsultingComponent},
+    {path:"add-post",component:AddPostComponent,  canActivate:[AuthGuard]},
+    {path:"edit-post/:id",component:EditPostComponent,  canActivate:[AuthGuard]},
+    {path:"baziform",component:BaziformComponent },
+    {path:"baziresult",component:BaziresultComponent  },
+    {path:"aboutme",component:AboutmeComponent  },
+  ]},
+  {path:"",redirectTo:"/cn", pathMatch: 'full'},
   {path:"**",component:NotFoundComponent},
 ]
 

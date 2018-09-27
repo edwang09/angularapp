@@ -1,15 +1,38 @@
-.anchor-bar{
-    position:fixed;
-    top: 5rem;
-    width: 13rem;
-    border: 0.5rem solid #ededed;
-    border-radius: 0.5rem;
-    right: 10vw;
-    background-color: #fff;
-    color: #999999;
-}
-.nav-link{
-    &:hover{
-        cursor: pointer;
+@import 'node_modules/bootstrap/scss/_functions';
+@import '../../../scss/customVariables';
+.container{
+    position: relative;
+    background: white;
+    box-shadow: 1px 1px 3px #000;
+    padding: 3rem 5rem;
+    margin: 1rem auto;
+    @include phoneandtablet{
+        padding: 3rem 1rem;
+    }
+    .anchor-bar{
+        position: fixed;
+        top: 10rem;
+        width: 13rem;
+        right: 5rem;
+        text-align: end;
+        background: $warning;
+        a{
+            font-weight: 800;
+            color:$dark;
+            font-family: $font-family-chinese;
+            line-height:10px;
+            &:hover{
+                color: $primary;
+            }
+        }
+        @include phoneandtablet {
+            display: none;
+        }
+    }
+    h5{
+        font-weight:bold;
+    }
+    ul{
+        margin-left:2rem;
     }
 }
