@@ -1,4 +1,3 @@
-import { NgtUniversalModule } from '@ng-toolkit/universal';
 import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -85,10 +84,7 @@ import { EditPostComponent } from './components/edit-post/edit-post.component'
     EditPostComponent
   ],
   imports:[
- CommonModule,
-NgtUniversalModule,
- 
-    
+    CommonModule,
     FormsModule,
     ReactiveFormsModule,
     FlashMessagesModule.forRoot(),
@@ -112,6 +108,7 @@ NgtUniversalModule,
   providers: [PostsService,AuthService,BirthService,ClientService, LunerapiService],
   entryComponents :[
     ModalComponent
-  ]
+  ],
+  bootstrap:[AppComponent]
 })
 export class AppModule { }
