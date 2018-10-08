@@ -20,18 +20,5 @@
         <li class="nav-item"><a routerLink="/cn/baziform" (click)="toggleSlideMenu()" class="nav-link">八字测算</a></li>
         <li class="nav-item"><a [ngx-scroll-to]="'#footer'" (click)="toggleSlideMenu()" class="nav-link">联系我们</a></li>
     </ul>
-    <ul *ngIf="isLoggedIn" class="navbar-nav ml-auto">
-        <!--li *ngIf="!isLoggedIn" class="nav-item" ><a routerLink="/register" class="nav-link">注册</a></li-->
-        <!--li *ngIf="!isLoggedIn" class="nav-item"><a routerLink="/cn/login" class="nav-link">登陆</a></li-->
-        <li class="nav-item">
-            <a href="#" class="nav-link">{{ loggedInUser }}</a>
-        </li>
-        <li class="nav-item">
-            <a href="#" routerLink="/cn/add-post" class="nav-link">新建文章</a>
-        </li>
-        <li class="nav-item">
-            <a href="#" (click)="onLogoutClick()" class="nav-link">登出</a>
-        </li>
-    </ul>
     </div></div>
 </nav>

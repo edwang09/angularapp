@@ -12,5 +12,11 @@
             <img src="../../../assets/images/WeChatcode.jpg" alt="">
         </div>
         <p>&copy; 版权所有 禁止转载</p>
+        <div class="admin">
+            <a href="#" class="nav-link">{{ loggedInUser }}</a>
+            <a href="#" routerLink="/cn/add-post" class="nav-link">新建文章</a>
+            <a href="#" (click)="onLogoutClick()" class="nav-link">登出</a>
+        </div>
+                
     </div>
 </footer>
