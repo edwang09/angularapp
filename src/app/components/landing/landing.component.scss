@@ -48,33 +48,72 @@
 }
 
 .landing-intro{
-  background: white;
   padding:2rem;
   max-width: 1200px;
   margin: 0 auto;
   .card{
-    background-color: $light;
-    border: solid 1px $primary;
-    border-radius:5rem;
+    background-color: white;
+    box-shadow:5px 5px 5px #ccc;
     height: 35rem;
-    padding: 2rem 2rem;
     transition: all 0.1s;
     &:hover{
-      transform: scale(1.05);
-      border-width: 2px;
+      transform: scale(1.02);
       border-color: $warning;
+      cursor: pointer;
     }
-    .card-image{
-      margin: 0 auto;
-      img{
-        height: 10rem;
-        width: 10rem;
+    .card-image-fengshui{
+      width:100%;
+      height: 16rem;
+      background:  linear-gradient(
+      rgba($light , .3), 
+      rgba($light, .3)
+      ), url('../../../assets/images/fengshui.jpeg') no-repeat;
+      text-align: center;
+      h3{
+        color:white;
+        font-size: 4rem;
+        width:30%;
+        margin: 2rem auto;
+        font-family: $font-family-kaiti;
       }
     }
-    h3{
+    
+    .card-image-xiangxue{
+      width:100%;
+      height: 16rem;
+      background:  linear-gradient(
+      rgba($light , 0.3), 
+      rgba($light, 0.3)
+      ), url('../../../assets/images/xiangxue.jpeg') no-repeat;
       text-align: center;
-      font-weight: bold;
-      font-family: $font-family-kaiti;
+      h3{
+        color:white;
+        font-size: 4rem;
+        width:30%;
+        margin: 2rem auto;
+        font-family: $font-family-kaiti;
+      }
+    }
+    
+    .card-image-mingli{
+      width:100%;
+      height: 16rem;
+      background:  linear-gradient(
+      rgba($light , 0.3), 
+      rgba($light, 0.3)
+      ), url('../../../assets/images/mingli.jpeg') no-repeat;
+      text-align: center;
+      h3{
+        color:white;
+        font-size: 4rem;
+        width:30%;
+        margin: 2rem auto;
+        font-family: $font-family-kaiti;
+      }
+    }
+    .card-text{
+      padding: 2rem 2rem;
+      text-align: center;
     }
   }
 }
@@ -131,21 +170,15 @@
       justify-content: space-between;
       height: auto;
       margin:2rem 0;
-      .card-image{
-        margin: 2rem auto;
-        img{
-          height: 10rem;
-          width: 10rem;
-        }
+      .card-image-fengshui, .card-image-xiangxue, .card-image-mingli{
+        flex:1
       }
       &:hover {
         background-color: $secondary;
         cursor: pointer;
       }
-      h4{
-        text-align: center;
-        font-weight: bold;
-        font-family: $font-family-kaiti;
+      .card-text{
+        flex:1
       }
     }
   }

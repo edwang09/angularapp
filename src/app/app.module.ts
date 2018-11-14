@@ -25,7 +25,6 @@ import { RegisterComponent } from './components/register/register.component';
 import { SettingComponent } from './components/setting/setting.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { AppRoutingModule } from './app-routing.module';
-import { AddClientComponent } from './components/add-client/add-client.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LandingComponent } from './components/landing/landing.component';
 import { AddPostComponent } from './components/add-post/add-post.component';
@@ -53,7 +52,8 @@ import {MatNativeDateModule} from '@angular/material';//needed for date picker t
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AboutmeComponent } from './components/aboutme/aboutme.component';
 import { ModalComponent } from './components/@common/modal/modal.component';
-import { EditPostComponent } from './components/edit-post/edit-post.component'
+import { EditPostComponent } from './components/edit-post/edit-post.component';
+import { ServiceWorkerModule } from '@angular/service-worker'
 
 @NgModule({
   declarations: [
@@ -67,7 +67,6 @@ import { EditPostComponent } from './components/edit-post/edit-post.component'
     RegisterComponent,
     SettingComponent,
     NotFoundComponent,
-    AddClientComponent,
     FooterComponent,
     LandingComponent,
     AddPostComponent,
@@ -103,7 +102,8 @@ import { EditPostComponent } from './components/edit-post/edit-post.component'
     MatSelectModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    NgbModule
+    NgbModule,
+    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [PostsService,AuthService,BirthService,ClientService, LunerapiService],
   entryComponents :[
