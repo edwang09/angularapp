@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { FlashMessagesService } from 'angular2-flash-messages';
 import { Router } from '@angular/router';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-login',
@@ -15,8 +16,11 @@ export class LoginComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private router: Router,
-    private flashMessage: FlashMessagesService
-  ) { }
+    private flashMessage: FlashMessagesService,
+    private meta: Meta,
+    private title: Title
+  ) { 
+    meta.addTag({name: 'robots', content: 'NOINDEX, NOFOLLOW'}); }
 
   ngOnInit() {
     this.authService.getAuth().subscribe(auth => {

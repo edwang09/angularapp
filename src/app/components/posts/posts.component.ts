@@ -5,6 +5,7 @@ import { Post } from '../../models/Post'
 import { filter, pairwise } from "rxjs/operators"
 import {Router, ActivatedRoute, RoutesRecognized } from '@angular/router';
 import { ScrollToService, ScrollToConfigOptions } from '@nicky-lenaers/ngx-scroll-to';
+import { Meta, Title } from '@angular/platform-browser';
 @Component({
   selector: 'app-posts',
   templateUrl: './posts.component.html',
@@ -19,8 +20,13 @@ export class PostsComponent implements OnInit, OnDestroy {
     private authService: AuthService,
     private PostsService:PostsService,
     private router: Router,
-    private _scrollToService: ScrollToService
+    private _scrollToService: ScrollToService,
+    private meta: Meta,
+    private title: Title
   ) {
+    title.setTitle('往期博文 | 紫水晶风水咨询')
+    meta.addTag({httpEquiv: 'Content-Type', content: 'text/html'}); 
+    meta.addTag({name: 'robots', content: 'INDEX, FOLLOW'}); 
   }
 
   ngOnInit() {

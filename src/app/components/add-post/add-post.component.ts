@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { FlashMessagesService } from 'angular2-flash-messages';
 import { Post } from '../../models/Post'
 import { finalize } from 'rxjs/operators';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-add-post',
@@ -29,8 +30,13 @@ export class AddPostComponent implements OnInit {
     private storage: AngularFireStorage,
     private PostsService:PostsService,
     private router: Router,
-    private flashMessage: FlashMessagesService
-  ) { }
+    private flashMessage: FlashMessagesService,
+    private meta: Meta,
+    private title: Title
+  ) {
+    title.setTitle('添加博文')
+    meta.addTag({name: 'robots', content: 'NOINDEX, NOFOLLOW'}); 
+}
 
   ngOnInit() {
     let that = this

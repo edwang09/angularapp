@@ -4,6 +4,7 @@ import { BirthService } from '../../services/birth.service'
 import { BaziForm } from '../../models/bazi'
 import {ModalComponent} from '../@common/modal/modal.component'
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-baziform',
@@ -20,7 +21,17 @@ export class BaziformComponent implements OnInit {
     body:""
   }
   result= {}
-  constructor(private BirthService:BirthService,private modalService: NgbModal) { }
+  constructor(
+    private BirthService:BirthService,
+    private modalService: NgbModal,
+    private meta: Meta,
+    private title: Title) {
+      title.setTitle('八字测算 | 测试你的生辰八字')
+      meta.addTag({name: 'description', content: '八测试你的生辰八字， 专业又准确的八字测算 '});
+      meta.addTag({httpEquiv: 'Content-Type', content: 'text/html'}); 
+      meta.addTag({name: 'robots', content: 'INDEX, FOLLOW'}); 
+  
+     }
 
   ngOnInit() {
     this.showresult=false

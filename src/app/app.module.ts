@@ -16,13 +16,8 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { ClientsComponent } from './components/clients/clients.component';
-import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { EditClientComponent } from './components/edit-client/edit-client.component';
-import { ClientDetailsComponent } from './components/client-details/client-details.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
-import { SettingComponent } from './components/setting/setting.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FooterComponent } from './components/footer/footer.component';
@@ -31,9 +26,7 @@ import { AddPostComponent } from './components/add-post/add-post.component';
 import { PostDetailComponent } from './components/post-detail/post-detail.component';
 import { ConsultingComponent } from './components/consulting/consulting.component';
 import { IntroductionComponent } from './components/introduction/introduction.component';
-import { TodayComponent } from './components/today/today.component';
 import { PostsComponent } from './components/posts/posts.component';
-import { ContactComponent } from './components/contact/contact.component';
 import { BaziformComponent } from './components/baziform/baziform.component';
 import { BaziresultComponent } from './components/baziresult/baziresult.component';
 
@@ -59,13 +52,8 @@ import { ServiceWorkerModule } from '@angular/service-worker'
   declarations: [
     AppComponent,
     NavbarComponent,
-    ClientsComponent,
-    SidebarComponent,
-    EditClientComponent,
-    ClientDetailsComponent,
     LoginComponent,
     RegisterComponent,
-    SettingComponent,
     NotFoundComponent,
     FooterComponent,
     LandingComponent,
@@ -73,9 +61,7 @@ import { ServiceWorkerModule } from '@angular/service-worker'
     PostDetailComponent,
     ConsultingComponent,
     IntroductionComponent,
-    TodayComponent,
     PostsComponent,
-    ContactComponent,
     BaziformComponent,
     BaziresultComponent,
     AboutmeComponent,

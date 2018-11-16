@@ -3,6 +3,7 @@ import { AngularFireStorage } from 'angularfire2/storage';
 import { PostsService } from '../../services/posts.service'
 import { Router, ActivatedRoute } from '@angular/router';
 import { FlashMessagesService } from 'angular2-flash-messages';
+import { Meta, Title } from '@angular/platform-browser';
 
 import { Post } from '../../models/Post'
 
@@ -25,8 +26,14 @@ export class EditPostComponent implements OnInit {
     private PostsService:PostsService,
     private router: Router,
     private route: ActivatedRoute,
-    private flashMessage: FlashMessagesService
-  ) { }
+    private flashMessage: FlashMessagesService,
+    private meta: Meta,
+    private title: Title
+  ) { 
+      title.setTitle('编辑博文')
+      meta.addTag({name: 'robots', content: 'NOINDEX, NOFOLLOW'}); 
+     
+  }
 
   ngOnInit() {
     
